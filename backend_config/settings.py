@@ -142,10 +142,11 @@ REST_FRAMEWORK = {
 # ------------------------------------------------------------------------------
 # CORS SETTINGS
 # ------------------------------------------------------------------------------
-CORS_ALLOW_ALL_ORIGINS = os.getenv("CORS_ALLOW_ALL", "True").lower() == "true"
+# Allow frontend origin
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
 
-# Alternatively, you can whitelist specific domains:
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "http://127.0.0.1:3000",
-# ]
+# Optional if you're testing with credentials/cookies:
+CORS_ALLOW_CREDENTIALS = True
