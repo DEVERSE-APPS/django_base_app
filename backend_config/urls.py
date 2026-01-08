@@ -21,9 +21,9 @@ from .views import home
 urlpatterns = [
     path("admin/", admin.site.urls),
 
-    path('', home, name='home'),  # 👈 default route (root /)
+    path('', home, name='home'),  # <- default route (root /)
 
 
 
-    path("api/", include("apps.tests.urls")),
+    path("api/", include("tests.urls")),
 ]
